@@ -1,5 +1,5 @@
-import java.util.Scanner;
-
+import java.util.*;
+import java.text.NumberFormat;
 class A{
     // Members
     int x; // Instance
@@ -10,6 +10,11 @@ class A{
 // A a3 = new A();
 
 class SalarySlip{
+
+    static Locale locale;
+    static void formatCurrency(double unformattdVal){
+        NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
+    }
 
     // I18N
     // Locale 
@@ -38,6 +43,12 @@ class SalarySlip{
     }
     static void input(){
         Scanner scanner =new Scanner(System.in);
+        System.out.println("Press 1 or Enlish");
+        System.out.println("हिंदी के लिए 2 दबाएँ");
+        int choice = scanner.nextInt(); 
+        if (choice == 1){
+            locale
+        }
         System.out.println("Enter the Id");
         int id = scanner.nextInt(); // 1001 \n
         scanner.nextLine(); // eat \n
