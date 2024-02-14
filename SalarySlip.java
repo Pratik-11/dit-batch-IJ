@@ -12,8 +12,9 @@ class A{
 class SalarySlip{
 
     static Locale locale;
-    static void formatCurrency(double unformattdVal){
+    static String formatCurrency(double unformattdVal){
         NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
+        return nf.format(unformattdVal);
     }
 
     // I18N
@@ -47,7 +48,7 @@ class SalarySlip{
         System.out.println("हिंदी के लिए 2 दबाएँ");
         int choice = scanner.nextInt(); 
         if (choice == 1){
-            locale
+            locale = new Locale("hi", "US");
         }
         System.out.println("Enter the Id");
         int id = scanner.nextInt(); // 1001 \n
@@ -70,12 +71,12 @@ class SalarySlip{
     static void print(int id, String name, double basicSalary, double hra, double da, double ta, double ma, double pf){
         System.out.println("Id "+id);
         System.out.println("Name "+properCase(name));
-        System.out.println("Basic Salary "+basicSalary);
+        System.out.println("Basic Salary "+formatCurrency(basicSalary));
         System.out.println("Earning \t\tDeduction");
-        System.out.println("Hra "+hra+"\t\t"+"PF  "+pf);
-        System.out.println("DA  "+da);
-        System.out.println("TA  "+ta);
-        System.out.println("MA  "+ma);
+        System.out.println("Hra "+formatCurrency(hra)+"\t\t"+"PF  "+formatCurrency(pf));
+        System.out.println("DA  "+formatCurrency(da));
+        System.out.println("TA  "+formatCurrency(ta));
+        System.out.println("MA  "+formatCurrency(ma));
     }
     public static void main(String[] args) {
         input();
