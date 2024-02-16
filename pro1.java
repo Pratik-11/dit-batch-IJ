@@ -1,6 +1,6 @@
 public class pro1 {
 
-    public static void goat(int a,int b,int c){
+    public void goat(int a,int b,int c){
         if(a>b){
             if(a>c){
                 System.out.println("a is greatest");
@@ -18,7 +18,7 @@ public class pro1 {
             }
         }
     }
-    public static void isPrime(int n){
+    public void isPrime(int n){
         if(n==1 || n == 2){
             System.out.println("prime");
         }
@@ -30,7 +30,7 @@ public class pro1 {
         }
         System.out.println("prime");
     }
-    public static void oddEvenSum(int n){
+    public void oddEvenSum(int n){
         int count = 1,oddsum=0,evensum=0,num=0;
         while (n>0) {
             num = n%10;
@@ -45,7 +45,20 @@ public class pro1 {
         }
         System.out.println("Oddcount = "+ oddsum + " Evencount = "+evensum);
     }
+
+    public void swapPosNum(int n){
+       int num=0,pos=1;
+       double plac=0;
+       while (n>0) {
+        num = n%10;
+        plac = plac + (int)pos*Math.pow(10,num-1);
+        n=n/10;
+        pos++;
+       }
+       System.out.println((int)plac);
+    }
     public static void main(String[] args) {
-        oddEvenSum(1212);
+        pro1 obj = new pro1();
+        obj.swapPosNum(32145);
     }
 }
