@@ -17,6 +17,14 @@ public class mar15 {
         factV(n-1, res);
     }
 
+    static void strongNum(){
+
+    }
+
+    static boolean strongNum2(){
+        return true;
+    }
+
     static void printTable(int n, int res){
         if(res == 0){
             return;
